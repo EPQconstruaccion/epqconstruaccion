@@ -2,7 +2,7 @@
 <html lang="es-PE">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     <title>EPQ Construcción | Expertos en Construcción en Huancayo</title>
     <meta name="description" content="40 años construyendo sueños en Huancayo. Servicios de construcción tradicional y especializada con garantía de calidad.">
     <meta name="keywords" content="construcción Huancayo, contratista de obras, construir casa, drywall Huancayo, marmolería, remodelación">
@@ -14,12 +14,24 @@
     <!-- Preload de recursos críticos -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="assets/img/hero-bg.jpg" as="image" media="(min-width: 768px)">
+    
+    <!-- Preconnect para fuentes externas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="EPQ Construcción | Expertos en Construcción en Huancayo">
+    <meta property="og:description" content="40 años construyendo sueños en Huancayo. Servicios de construcción tradicional y especializada con garantía de calidad.">
+    <meta property="og:image" content="https://epqconstruccion.com/assets/img/og-image.jpg">
+    <meta property="og:url" content="https://epqconstruccion.com">
+    <meta property="og:type" content="website">
     
     <!-- Schema Markup para SEO -->
     <script type="application/ld+json">
@@ -34,6 +46,18 @@
         "addressLocality": "Huancayo",
         "addressRegion": "Junín",
         "addressCountry": "PE"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
       }
     }
     </script>
@@ -285,6 +309,26 @@
             color: var(--dark);
             cursor: pointer;
             padding: 0.5rem;
+            z-index: 1001;
+        }
+
+        /* Overlay para el menú móvil */
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .nav-overlay.active {
+            opacity: 1;
+            pointer-events: all;
         }
 
         /* ===== HERO SECTION ===== */
@@ -464,13 +508,16 @@
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-10px) scale(1.02);
+            opacity: 0.98;
             box-shadow: var(--shadow-lg);
         }
 
         .service-image {
             height: 200px;
             overflow: hidden;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
         }
 
         .service-image img {
@@ -1105,40 +1152,82 @@
                 font-size: 2rem;
             }
 
+            /* Header optimizado para móvil */
+            .header {
+                padding: 0.5rem 0;
+            }
+            
             .navbar {
-                padding: 1rem 0;
+                padding: 0.5rem 1rem;
+            }
+            
+            .logo img {
+                height: 40px;
+                width: 40px;
+            }
+            
+            .logo-text {
+                font-size: 1.1rem;
+                margin-left: 0.5rem;
             }
 
+            /* Menú móvil mejorado */
             .nav-links {
                 position: fixed;
-                top: 80px;
+                top: 0;
                 left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
+                width: 80%;
+                height: 100vh;
                 background-color: var(--white);
                 flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 2rem;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 5rem 2rem 2rem;
+                gap: 1.5rem;
                 transition: var(--transition);
-                z-index: 999;
+                z-index: 1000;
+                box-shadow: 2px 0 10px rgba(0,0,0,0.1);
             }
 
             .nav-links.active {
                 left: 0;
             }
 
+            .nav-link {
+                font-size: 1.1rem;
+                padding: 0.5rem 0;
+            }
+
             .mobile-menu-btn {
                 display: block;
             }
 
+            /* Hero section optimizado */
+            .hero {
+                min-height: 600px;
+                padding-top: 70px;
+            }
+            
+            .hero-content {
+                padding-top: 1rem;
+            }
+            
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 2rem;
+                margin-top: 1rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
             }
 
             .hero-buttons {
                 flex-direction: column;
                 gap: 1rem;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
             }
 
             .hero-stats {
@@ -1147,6 +1236,18 @@
                 margin-top: 3rem;
             }
 
+            .stat-item {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .stat-number {
+                font-size: 1.8rem;
+                margin-bottom: 0;
+            }
+
+            /* Otros ajustes */
             .cta-buttons {
                 flex-direction: column;
                 gap: 1rem;
@@ -1160,6 +1261,10 @@
             .process-step {
                 min-height: auto;
             }
+
+            .services-container {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1168,7 +1273,7 @@
             }
 
             .hero-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .projects-grid {
@@ -1177,6 +1282,12 @@
 
             .contact-container {
                 grid-template-columns: 1fr;
+            }
+
+            .stat-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
             }
         }
 
@@ -1200,6 +1311,18 @@
         .skip-link:focus {
             top: 0;
         }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
     </style>
 </head>
 <body>
@@ -1211,7 +1334,7 @@
         <div class="container">
             <nav class="navbar">
                 <a href="#" class="logo">
-                    <img src="assets/img/logo.png" alt="EPQ Construcción" width="50" height="50">
+                    <img src="assets/img/logo-mobile.png" alt="EPQ Construcción" width="40" height="40">
                     <span class="logo-text">EPQ <span>Construcción</span></span>
                 </a>
                 
@@ -1223,11 +1346,13 @@
                     <li><a href="#contacto" class="nav-link">Contacto</a></li>
                 </ul>
                 
-                <button class="mobile-menu-btn" aria-label="Menú móvil">
+                <button class="mobile-menu-btn" aria-label="Menú móvil" aria-expanded="false">
                     <i class="fas fa-bars"></i>
+                    <span class="sr-only">Menú de navegación</span>
                 </button>
             </nav>
         </div>
+        <div class="nav-overlay"></div>
     </header>
 
     <!-- Hero Section -->
@@ -1306,7 +1431,7 @@
                 </div>
                 
                 <div class="about-image">
-                    <img src="assets/img/about.jpg" alt="Equipo de EPQ Construcción" width="600" height="400">
+                    <img src="assets/img/about.jpg" alt="Equipo de EPQ Construcción" width="600" height="400" loading="lazy">
                     <div class="years-experience">
                         <div class="years-number">40</div>
                         <div class="years-text">Años</div>
@@ -1325,7 +1450,7 @@
                 <!-- Servicio 1 -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="assets/img/service-1.jpg" alt="Construcción Tradicional" width="400" height="200">
+                        <img src="assets/img/service-1.jpg" alt="Construcción Tradicional" width="400" height="200" loading="lazy">
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Construcción Tradicional</h3>
@@ -1359,7 +1484,7 @@
                 <!-- Servicio 2 -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="assets/img/service-2.jpg" alt="Drywall" width="400" height="200">
+                        <img src="assets/img/service-2.jpg" alt="Drywall" width="400" height="200" loading="lazy">
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Drywall</h3>
@@ -1393,7 +1518,7 @@
                 <!-- Servicio 3 -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="assets/img/service-3.jpg" alt="Marmolería" width="400" height="200">
+                        <img src="assets/img/service-3.jpg" alt="Marmolería" width="400" height="200" loading="lazy">
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Marmolería</h3>
@@ -1419,6 +1544,48 @@
                         </ul>
                         
                         <a href="https://wa.me/51924919493?text=Hola,%20quiero%20cotizar%20un%20servicio%20de%20marmolería" class="btn btn-primary service-btn">
+                            <i class="fab fa-whatsapp"></i> Cotizar este servicio
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Nuevo Servicio 4 - Albañilería en General -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="assets/img/service-4.jpg" alt="Albañilería en General" width="400" height="200" loading="lazy">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Albañilería en General</h3>
+                        <p class="service-description">Servicios completos de albañilería para mantenimiento y construcción menor.</p>
+                        
+                        <ul class="service-features">
+                            <li class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Tarrajeo de paredes</span>
+                            </li>
+                            <li class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Instalaciones eléctricas</span>
+                            </li>
+                            <li class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Enchapados de baños/cocinas</span>
+                            </li>
+                            <li class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Pisos y porcelanatos</span>
+                            </li>
+                            <li class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Gasfitería completa</span>
+                            </li>
+                            <li class="service-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Pintura de interiores/exteriores</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="https://wa.me/51924919493?text=Hola,%20quiero%20cotizar%20un%20servicio%20de%20albañilería%20en%20general" class="btn btn-primary service-btn">
                             <i class="fab fa-whatsapp"></i> Cotizar este servicio
                         </a>
                     </div>
@@ -1489,7 +1656,7 @@
                 <!-- Proyecto 1 -->
                 <div class="project-card" data-category="casas">
                     <div class="project-image">
-                        <img src="assets/img/project-1.jpg" alt="Casa Moderna" width="400" height="250">
+                        <img src="assets/img/project-1.jpg" alt="Casa Moderna" width="400" height="250" loading="lazy">
                     </div>
                     <div class="project-overlay">
                         <h3 class="project-title">Casa Moderna</h3>
@@ -1500,7 +1667,7 @@
                 <!-- Proyecto 2 -->
                 <div class="project-card" data-category="drywall">
                     <div class="project-image">
-                        <img src="assets/img/project-2.jpg" alt="Oficinas en Drywall" width="400" height="250">
+                        <img src="assets/img/project-2.jpg" alt="Oficinas en Drywall" width="400" height="250" loading="lazy">
                     </div>
                     <div class="project-overlay">
                         <h3 class="project-title">Oficinas Corporativas</h3>
@@ -1511,7 +1678,7 @@
                 <!-- Proyecto 3 -->
                 <div class="project-card" data-category="marmoleria">
                     <div class="project-image">
-                        <img src="assets/img/project-3.jpg" alt="Cocina en Mármol" width="400" height="250">
+                        <img src="assets/img/project-3.jpg" alt="Cocina en Mármol" width="400" height="250" loading="lazy">
                     </div>
                     <div class="project-overlay">
                         <h3 class="project-title">Cocina de Lujo</h3>
@@ -1522,7 +1689,7 @@
                 <!-- Proyecto 4 -->
                 <div class="project-card" data-category="remodelaciones">
                     <div class="project-image">
-                        <img src="assets/img/project-4.jpg" alt="Remodelación de Casa" width="400" height="250">
+                        <img src="assets/img/project-4.jpg" alt="Remodelación de Casa" width="400" height="250" loading="lazy">
                     </div>
                     <div class="project-overlay">
                         <h3 class="project-title">Remodelación Integral</h3>
@@ -1533,7 +1700,7 @@
                 <!-- Proyecto 5 -->
                 <div class="project-card" data-category="casas">
                     <div class="project-image">
-                        <img src="assets/img/project-5.jpg" alt="Casa Familiar" width="400" height="250">
+                        <img src="assets/img/project-5.jpg" alt="Casa Familiar" width="400" height="250" loading="lazy">
                     </div>
                     <div class="project-overlay">
                         <h3 class="project-title">Casa Familiar</h3>
@@ -1544,7 +1711,7 @@
                 <!-- Proyecto 6 -->
                 <div class="project-card" data-category="drywall">
                     <div class="project-image">
-                        <img src="assets/img/project-6.jpg" alt="Cielo Raso en Drywall" width="400" height="250">
+                        <img src="assets/img/project-6.jpg" alt="Cielo Raso en Drywall" width="400" height="250" loading="lazy">
                     </div>
                     <div class="project-overlay">
                         <h3 class="project-title">Cielo Raso Moderno</h3>
@@ -1564,7 +1731,7 @@
                 <!-- Testimonio 1 -->
                 <div class="testimonial-slide active">
                     <div class="testimonial-avatar">
-                        <img src="assets/img/testimonial-1.jpg" alt="Víctor Advíncula" width="100" height="100">
+                        <img src="assets/img/testimonial-1.jpg" alt="Víctor Advíncula" width="100" height="100" loading="lazy">
                     </div>
                     <p class="testimonial-text">EPQ Construcción construyó todos nuestros locales de Pollería La Leña. Su trabajo es impecable y cumplen siempre con los plazos. Los recomiendo totalmente para proyectos comerciales.</p>
                     <h4 class="testimonial-author">Víctor Advíncula</h4>
@@ -1574,7 +1741,7 @@
                 <!-- Testimonio 2 -->
                 <div class="testimonial-slide">
                     <div class="testimonial-avatar">
-                        <img src="assets/img/testimonial-2.jpg" alt="Amador Vilcatoma" width="100" height="100">
+                        <img src="assets/img/testimonial-2.jpg" alt="Amador Vilcatoma" width="100" height="100" loading="lazy">
                     </div>
                     <p class="testimonial-text">El maestro de EPQ Construcción ha construido mis tres casas familiares. Su atención al detalle y conocimiento técnico son incomparables. Una empresa seria y confiable.</p>
                     <h4 class="testimonial-author">Amador Vilcatoma</h4>
@@ -1584,7 +1751,7 @@
                 <!-- Testimonio 3 -->
                 <div class="testimonial-slide">
                     <div class="testimonial-avatar">
-                        <img src="assets/img/testimonial-3.jpg" alt="Eduardo Quispe" width="100" height="100">
+                        <img src="assets/img/testimonial-3.jpg" alt="Eduardo Quispe" width="100" height="100" loading="lazy">
                     </div>
                     <p class="testimonial-text">Los locales de nuestras Pollerías Mesoncito fueron construidos por EPQ Construcción. Su trabajo en drywall y acabados es de primera calidad. Excelente relación precio-calidad.</p>
                     <h4 class="testimonial-author">Eduardo Quispe</h4>
@@ -1665,7 +1832,7 @@
                 </div>
                 
                 <div class="contact-form">
-                    <form id="contactForm" action="gracias.html" method="POST">
+                    <form id="contactForm" action="gracias.html" method="POST" netlify>
                         <div class="form-group">
                             <label for="name" class="form-label">Nombre Completo</label>
                             <input type="text" id="name" name="name" class="form-control" required>
@@ -1688,6 +1855,7 @@
                                 <option value="construccion">Construcción Tradicional</option>
                                 <option value="drywall">Drywall</option>
                                 <option value="marmoleria">Marmolería</option>
+                                <option value="albanileria">Albañilería en General</option>
                                 <option value="remodelacion">Remodelación</option>
                                 <option value="otros">Otros Servicios</option>
                             </select>
@@ -1718,7 +1886,7 @@
             <div class="footer-container">
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="assets/img/logo-white.png" alt="EPQ Construcción" width="40" height="40">
+                        <img src="assets/img/logo-white.png" alt="EPQ Construcción" width="40" height="40" loading="lazy">
                         <span class="footer-logo-text">EPQ <span>Construcción</span></span>
                     </div>
                     <p class="footer-about">40 años construyendo sueños en Huancayo. Calidad, compromiso y profesionalismo en cada proyecto.</p>
@@ -1736,8 +1904,8 @@
                         <li><a href="#servicios" class="footer-link">Construcción Tradicional</a></li>
                         <li><a href="#servicios" class="footer-link">Drywall</a></li>
                         <li><a href="#servicios" class="footer-link">Marmolería</a></li>
+                        <li><a href="#servicios" class="footer-link">Albañilería en General</a></li>
                         <li><a href="#servicios" class="footer-link">Remodelaciones</a></li>
-                        <li><a href="#servicios" class="footer-link">Instalaciones Eléctricas</a></li>
                     </ul>
                 </div>
                 
@@ -1788,32 +1956,58 @@
 
     <!-- JavaScript -->
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Cerrar menú al hacer clic fuera
-        document.addEventListener('click', (e) => {
-            if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        });
+        // Mobile Menu mejorado
+        const mobileMenu = (() => {
+            const btn = document.querySelector('.mobile-menu-btn');
+            const menu = document.querySelector('.nav-links');
+            const overlay = document.querySelector('.nav-overlay');
+            
+            const toggleMenu = () => {
+                menu.classList.toggle('active');
+                overlay.classList.toggle('active');
+                btn.setAttribute('aria-expanded', menu.classList.contains('active'));
+                document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+                
+                // Cambiar ícono
+                if (menu.classList.contains('active')) {
+                    btn.innerHTML = '<i class="fas fa-times"></i><span class="sr-only">Cerrar menú</span>';
+                } else {
+                    btn.innerHTML = '<i class="fas fa-bars"></i><span class="sr-only">Abrir menú</span>';
+                }
+            };
+            
+            const closeMenu = () => {
+                menu.classList.remove('active');
+                overlay.classList.remove('active');
+                btn.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+                btn.innerHTML = '<i class="fas fa-bars"></i><span class="sr-only">Abrir menú</span>';
+            };
+            
+            const init = () => {
+                btn.addEventListener('click', toggleMenu);
+                overlay.addEventListener('click', closeMenu);
+                
+                // Cerrar menú al hacer clic en un enlace
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', closeMenu);
+                });
+                
+                // Redirigir contacto a WhatsApp en móvil
+                if (window.innerWidth <= 768) {
+                    const contactLink = document.querySelector('.nav-link[href="#contacto"]');
+                    if (contactLink) {
+                        contactLink.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            window.location.href = 'https://wa.me/51924919493';
+                        });
+                    }
+                }
+            };
+            
+            return { init };
+        })();
 
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-        
         // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.querySelector('.header');
@@ -1889,22 +2083,28 @@
         // Form validation
         const contactForm = document.getElementById('contactForm');
         
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = this.name.value.trim();
-            const email = this.email.value.trim();
-            const phone = this.phone.value.trim();
-            const service = this.service.value;
-            
-            if (name && email && phone && service) {
-                // Aquí normalmente enviarías el formulario a un servidor
-                // Para este ejemplo, redirigimos a la página de gracias
-                this.submit();
-            } else {
-                alert('Por favor complete todos los campos requeridos.');
-            }
-        });
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                
+                try {
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+                    
+                    // Simular envío (reemplazar con fetch real)
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                    
+                    this.submit();
+                } catch (error) {
+                    submitBtn.innerHTML = originalText;
+                    alert('Error al enviar. Por favor intente nuevamente.');
+                } finally {
+                    submitBtn.disabled = false;
+                }
+            });
+        }
 
         // Lazy loading para imágenes
         if ('loading' in HTMLImageElement.prototype) {
@@ -1912,12 +2112,27 @@
             images.forEach(img => {
                 img.src = img.dataset.src;
             });
-        } else {
-            // Cargar polyfill para lazy loading si el navegador no lo soporta
-            const script = document.createElement('script');
-            script.src = 'https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.0.1/dist/loading-attribute-polyfill.min.js';
-            document.body.appendChild(script);
+        } else if ('IntersectionObserver' in window) {
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.removeAttribute('loading');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            }, { rootMargin: '200px' });
+            
+            lazyImages.forEach(img => imageObserver.observe(img));
         }
+
+        // Inicializar componentes cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', () => {
+            mobileMenu.init();
+        });
     </script>
 </body>
 </html>
