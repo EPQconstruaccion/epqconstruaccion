@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-    <title>EPQ Construcción | Expertos en Construcción en Huancayo</title>
+    <title>EPQ Construacción | Expertos en Construcción en Huancayo</title>
     <meta name="description" content="40 años construyendo sueños en Huancayo. Servicios de construcción tradicional y especializada con garantía de calidad.">
     <meta name="keywords" content="construcción Huancayo, contratista de obras, construir casa, drywall Huancayo, marmolería, remodelación">
-    <meta name="author" content="EPQ Construcción">
+    <meta name="author" content="EPQ Construacción">
     
     <!-- Favicon -->
-    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
     
     <!-- Preload de recursos críticos -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
@@ -26,10 +26,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="EPQ Construcción | Expertos en Construcción en Huancayo">
+    <meta property="og:title" content="EPQ Construacción | Expertos en Construcción en Huancayo">
     <meta property="og:description" content="40 años construyendo sueños en Huancayo. Servicios de construcción tradicional y especializada con garantía de calidad.">
-    <meta property="og:image" content="https://epqconstruccion.com/assets/img/og-image.jpg">
-    <meta property="og:url" content="https://epqconstruccion.com">
+    <meta property="og:image" content="https://epqconstruaccion.com/assets/img/og-image.jpg">
+    <meta property="og:url" content="https://epqconstruaccion.com">
     <meta property="og:type" content="website">
     
     <!-- Schema Markup para SEO -->
@@ -37,8 +37,8 @@
     {
       "@context": "https://schema.org",
       "@type": "ConstructionBusiness",
-      "name": "EPQ Construcción",
-      "image": "https://epqconstruccion.com/assets/img/logo.png",
+      "name": "EPQ Construacción",
+      "image": "https://epqconstruaccion.com/assets/img/logo.png",
       "telephone": "+51924919493",
       "address": {
         "@type": "PostalAddress",
@@ -267,8 +267,16 @@
         }
 
         .logo img {
-            height: 50px;
+            height: auto;
             width: auto;
+            max-height: 50px;
+            transition: var(--transition);
+        }
+
+        @media (max-width: 768px) {
+            .logo img {
+                max-height: 40px;
+            }
         }
 
         .logo-text {
@@ -351,7 +359,7 @@
             min-height: 700px;
             display: flex;
             align-items: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/assets/img/hero-bg.jpg') no-repeat center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/img/hero-bg.jpg') no-repeat center/cover;
             color: var(--white);
             padding-top: 80px;
         }
@@ -858,7 +866,7 @@
 
         /* ===== CTA SECTION ===== */
         .cta {
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/assets/img/cta-bg.jpg') no-repeat center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('assets/img/cta-bg.jpg') no-repeat center/cover;
             color: var(--white);
             text-align: center;
             position: relative;
@@ -989,8 +997,14 @@
         }
 
         .footer-logo img {
-            height: 40px;
+            height: auto;
+            max-height: 40px;
             width: auto;
+            transition: var(--transition);
+        }
+
+        .footer-logo:hover img {
+            transform: scale(1.05);
         }
 
         .footer-logo-text {
@@ -1175,8 +1189,7 @@
             }
             
             .logo img {
-                height: 40px;
-                width: 40px;
+                max-height: 40px;
             }
             
             .logo-text {
@@ -1366,8 +1379,13 @@
         <div class="container">
             <nav class="navbar">
                 <a href="#" class="logo">
-                    <img src="/assets/img/logo-mobile.png" alt="EPQ Construcción" width="40" height="40">
-                    <span class="logo-text">EPQ <span>Construcción</span></span>
+                    <picture>
+                        <!-- Logo más grande para desktop -->
+                        <source srcset="assets/img/logo.png" media="(min-width: 768px)">
+                        <!-- Logo móvil -->
+                        <img src="assets/img/logo-mobile.png" alt="EPQ Construacción" width="40" height="40" loading="eager">
+                    </picture>
+                    <span class="logo-text">EPQ <span>Construacción</span></span>
                 </a>
                 
                 <ul class="nav-links">
@@ -1424,7 +1442,7 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2 class="about-title">EPQ <span>Construcción</span></h2>
+                    <h2 class="about-title">EPQ <span>Construacción</span></h2>
                     <p class="about-description">Con más de cuatro décadas de experiencia en el sector de la construcción, nos hemos consolidado como líderes en Huancayo, ofreciendo servicios de alta calidad y garantizando la satisfacción de nuestros clientes.</p>
                     
                     <div class="about-features">
@@ -1463,7 +1481,7 @@
                 </div>
                 
                 <div class="about-image">
-                    <img src="/assets/img/about.jpg" alt="Equipo de EPQ Construcción" width="600" height="400" loading="lazy">
+                    <img src="assets/img/about.jpg" alt="Equipo de EPQ Construacción" width="600" height="400" loading="lazy">
                     <div class="years-experience">
                         <div class="years-number">40</div>
                         <div class="years-text">Años</div>
@@ -1482,7 +1500,7 @@
                 <!-- Servicio 1 - Construcción Tradicional -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="/assets/img/service-1.jpg" alt="Construcción Tradicional" width="400" height="200" loading="lazy">
+                        <img src="assets/img/service-1.jpg" alt="Construcción Tradicional" width="400" height="200" loading="lazy">
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Construcción Tradicional</h3>
@@ -1516,7 +1534,7 @@
                 <!-- Servicio 2 - Albañilería en General -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="/assets/img/service-4.jpg" alt="Albañilería en General" width="400" height="200" loading="lazy">
+                        <img src="assets/img/service-4.jpg" alt="Albañilería en General" width="400" height="200" loading="lazy">
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Albañilería en General</h3>
@@ -1558,7 +1576,7 @@
                 <!-- Servicio 3 - Drywall -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="/assets/img/service-2.jpg" alt="Drywall" width="400" height="200" loading="lazy">
+                        <img src="assets/img/service-2.jpg" alt="Drywall" width="400" height="200" loading="lazy">
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Drywall</h3>
@@ -1592,7 +1610,7 @@
                 <!-- Servicio 4 - Marmolería -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="/assets/img/service-3.jpg" alt="Marmolería" width="400" height="200" loading="lazy">
+                        <img src="assets/img/service-3.jpg" alt="Marmolería" width="400" height="200" loading="lazy">
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Marmolería</h3>
@@ -1688,7 +1706,7 @@
                 <!-- Proyecto 1 -->
                 <div class="project-card" data-category="casas">
                     <div class="project-image">
-                        <img src="/assets/img/project-1.jpg" alt="Casa Moderna" width="400" height="250" loading="lazy">
+                        <img src="assets/img/project-1.jpg" alt="Casa Moderna" width="400" height="250" loading="lazy">
                     </div>
                     <div class="project-overlay">
                         <h3 class="project-title">Casa Moderna</h3>
@@ -1699,7 +1717,7 @@
                 <!-- Proyecto 2 -->
                 <div class="project-card" data-category="drywall">
                     <div class="project-image">
-                        <img src="/assets/img/project-2.jpg" alt="Oficinas en Drywall" width="400" height="250" loading="lazy">
+                        <img src="assets/img/project-2.jpg" alt="Oficinas en Drywall" width="400" height="250" loading="lazy">
                     </div>
                     <div class="project-overlay">
                         <h3 class="project-title">Oficinas Corporativas</h3>
@@ -1710,7 +1728,7 @@
                 <!-- Proyecto 3 -->
                 <div class="project-card" data-category="marmoleria">
                     <div class="project-image">
-                        <img src="/assets/img/project-3.jpg" alt="Cocina en Mármol" width="400" height="250" loading="lazy">
+                        <img src="assets/img/project-3.jpg" alt="Cocina en Mármol" width="400" height="250" loading="lazy">
                     </div>
                     <div class="project-overlay">
                         <h3 class="project-title">Cocina de Lujo</h3>
@@ -1721,7 +1739,7 @@
                 <!-- Proyecto 4 -->
                 <div class="project-card" data-category="remodelaciones">
                     <div class="project-image">
-                        <img src="/assets/img/project-4.jpg" alt="Remodelación de Casa" width="400" height="250" loading="lazy">
+                        <img src="assets/img/project-4.jpg" alt="Remodelación de Casa" width="400" height="250" loading="lazy">
                     </div>
                     <div class="project-overlay">
                         <h3 class="project-title">Remodelación Integral</h3>
@@ -1732,7 +1750,7 @@
                 <!-- Proyecto 5 -->
                 <div class="project-card" data-category="casas">
                     <div class="project-image">
-                        <img src="/assets/img/project-5.jpg" alt="Casa Familiar" width="400" height="250" loading="lazy">
+                        <img src="assets/img/project-5.jpg" alt="Casa Familiar" width="400" height="250" loading="lazy">
                     </div>
                     <div class="project-overlay">
                         <h3 class="project-title">Casa Familiar</h3>
@@ -1743,7 +1761,7 @@
                 <!-- Proyecto 6 -->
                 <div class="project-card" data-category="drywall">
                     <div class="project-image">
-                        <img src="/assets/img/project-6.jpg" alt="Cielo Raso en Drywall" width="400" height="250" loading="lazy">
+                        <img src="assets/img/project-6.jpg" alt="Cielo Raso en Drywall" width="400" height="250" loading="lazy">
                     </div>
                     <div class="project-overlay">
                         <h3 class="project-title">Cielo Raso Moderno</h3>
@@ -1763,9 +1781,9 @@
                 <!-- Testimonio 1 -->
                 <div class="testimonial-slide active">
                     <div class="testimonial-avatar">
-                        <img src="/assets/img/testimonial-1.jpg" alt="Víctor Advíncula" width="100" height="100" loading="lazy">
+                        <img src="assets/img/testimonial-1.jpg" alt="Víctor Advíncula" width="100" height="100" loading="lazy">
                     </div>
-                    <p class="testimonial-text">EPQ Construcción construyó todos nuestros locales de Pollería La Leña. Su trabajo es impecable y cumplen siempre con los plazos. Los recomiendo totalmente para proyectos comerciales.</p>
+                    <p class="testimonial-text">EPQ Construacción construyó todos nuestros locales de Pollería La Leña. Su trabajo es impecable y cumplen siempre con los plazos. Los recomiendo totalmente para proyectos comerciales.</p>
                     <h4 class="testimonial-author">Víctor Advíncula</h4>
                     <p class="testimonial-role">Dueño de Pollerías La Leña</p>
                 </div>
@@ -1773,9 +1791,9 @@
                 <!-- Testimonio 2 -->
                 <div class="testimonial-slide">
                     <div class="testimonial-avatar">
-                        <img src="/assets/img/testimonial-2.jpg" alt="Amador Vilcatoma" width="100" height="100" loading="lazy">
+                        <img src="assets/img/testimonial-2.jpg" alt="Amador Vilcatoma" width="100" height="100" loading="lazy">
                     </div>
-                    <p class="testimonial-text">El maestro de EPQ Construcción ha construido mis tres casas familiares. Su atención al detalle y conocimiento técnico son incomparables. Una empresa seria y confiable.</p>
+                    <p class="testimonial-text">El maestro de EPQ Construacción ha construido mis tres casas familiares. Su atención al detalle y conocimiento técnico son incomparables. Una empresa seria y confiable.</p>
                     <h4 class="testimonial-author">Amador Vilcatoma</h4>
                     <p class="testimonial-role">Rector de la UNC</p>
                 </div>
@@ -1783,9 +1801,9 @@
                 <!-- Testimonio 3 -->
                 <div class="testimonial-slide">
                     <div class="testimonial-avatar">
-                        <img src="/assets/img/testimonial-3.jpg" alt="Eduardo Quispe" width="100" height="100" loading="lazy">
+                        <img src="assets/img/testimonial-3.jpg" alt="Eduardo Quispe" width="100" height="100" loading="lazy">
                     </div>
-                    <p class="testimonial-text">Los locales de nuestras Pollerías Mesoncito fueron construidos por EPQ Construcción. Su trabajo en drywall y acabados es de primera calidad. Excelente relación precio-calidad.</p>
+                    <p class="testimonial-text">Los locales de nuestras Pollerías Mesoncito fueron construidos por EPQ Construacción. Su trabajo en drywall y acabados es de primera calidad. Excelente relación precio-calidad.</p>
                     <h4 class="testimonial-author">Eduardo Quispe</h4>
                     <p class="testimonial-role">Dueño de Pollerías Mesoncito</p>
                 </div>
@@ -1847,7 +1865,7 @@
                         </div>
                         <div class="contact-text">
                             <h3>Email</h3>
-                            <a href="mailto:contacto@epqconstruccion.com">contacto@epqconstruccion.com</a>
+                            <a href="mailto:contacto@epqconstruaccion.com">contacto@epqconstruaccion.com</a>
                         </div>
                     </div>
                     
@@ -1918,8 +1936,11 @@
             <div class="footer-container">
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="/assets/img/logo-white.png" alt="EPQ Construcción" width="40" height="40" loading="lazy">
-                        <span class="footer-logo-text">EPQ <span>Construcción</span></span>
+                        <picture>
+                            <source srcset="assets/img/logo.png" media="(min-width: 768px)">
+                            <img src="assets/img/logo-white.png" alt="EPQ Construacción" width="40" height="40" loading="lazy">
+                        </picture>
+                        <span class="footer-logo-text">EPQ <span>Construacción</span></span>
                     </div>
                     <p class="footer-about">40 años construyendo sueños en Huancayo. Calidad, compromiso y profesionalismo en cada proyecto.</p>
                     <div class="footer-social">
@@ -1970,13 +1991,13 @@
                         <div class="footer-contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <a href="mailto:contacto@epqconstruccion.com">contacto@epqconstruccion.com</a>
+                        <a href="mailto:contacto@epqconstruaccion.com">contacto@epqconstruaccion.com</a>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 EPQ Construcción. Todos los derechos reservados.</p>
+                <p>&copy; 2025 EPQ Construacción. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
