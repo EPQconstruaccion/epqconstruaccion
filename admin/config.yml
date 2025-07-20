@@ -1,0 +1,41 @@
+backend:
+  name: git-gateway
+  branch: main # o la rama principal de tu repositorio
+
+media_folder: "assets/img/uploads" # Carpeta donde se guardarán las imágenes
+public_folder: "/assets/img/uploads" # Ruta pública para acceder a las imágenes
+
+collections:
+  - name: "proyectos"
+    label: "Proyectos"
+    folder: "_data/proyectos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Descripción", name: "description", widget: "text"}
+      - {label: "Categoría", name: "category", widget: "select", options: ["Construcción Tradicional", "Drywall", "Marmolería", "Remodelaciones"]}
+      - {label: "Imagen", name: "image", widget: "image"}
+      - {label: "Fecha", name: "date", widget: "datetime"}
+
+  - name: "testimonios"
+    label: "Testimonios"
+    folder: "_data/testimonios"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nombre", name: "name", widget: "string"}
+      - {label: "Cargo", name: "role", widget: "string"}
+      - {label: "Testimonio", name: "quote", widget: "text"}
+      - {label: "Foto", name: "avatar", widget: "image"}
+
+  - name: "servicios"
+    label: "Servicios"
+    folder: "_data/servicios"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nombre del Servicio", name: "title", widget: "string"}
+      - {label: "Descripción", name: "description", widget: "text"}
+      - {label: "Características", name: "features", widget: "list", field: {label: "Característica", name: "feature", widget: "string"}}
+      - {label: "Imagen", name: "image", widget: "image"}
