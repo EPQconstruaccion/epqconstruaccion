@@ -3,26 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EPQ Construacción | Expertos en Construcción en Huancayo</title>
+    <title>EPQ Construcción | Expertos en Construcción en Huancayo</title>
     <meta name="description" content="40 años construyendo sueños en Huancayo. Servicios de construcción tradicional y especializada con garantía de calidad.">
     <meta name="keywords" content="construcción Huancayo, contratista de obras, construir casa, drywall Huancayo, marmolería, remodelación">
-    <meta name="author" content="EPQ Construacción">
+    <meta name="author" content="EPQ Construcción">
     
     <!-- Favicon -->
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
     
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" as="style">
+    
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Schema Markup para SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ConstructionBusiness",
+      "name": "EPQ Construcción",
+      "image": "https://epqconstruccion.com/assets/img/logo.png",
+      "telephone": "+51924919493",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Huancayo",
+        "addressRegion": "Junín",
+        "addressCountry": "PE"
+      }
+    }
+    </script>
+    
     <style>
         /* ===== VARIABLES Y RESET ===== */
         :root {
-            --primary: #FF6B00;
-            --primary-dark: #E05D00;
-            --secondary: #2C3E50;
+            --primary: #E05D00;
+            --primary-dark: #C25100;
+            --secondary: #1E2B38;
             --light: #F8F9FA;
             --dark: #212529;
             --gray: #6C757D;
@@ -211,6 +232,7 @@
 
         .logo img {
             height: 50px;
+            width: auto;
         }
 
         .logo-text {
@@ -262,6 +284,7 @@
             font-size: 1.5rem;
             color: var(--dark);
             cursor: pointer;
+            padding: 0.5rem;
         }
 
         /* ===== HERO SECTION ===== */
@@ -526,6 +549,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 280px;
         }
 
         .process-step:hover {
@@ -556,26 +580,6 @@
             font-size: 2.5rem;
             margin-bottom: 1rem;
             color: var(--primary);
-        }
-
-        .process-image {
-            width: 100%;
-            height: 150px;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            margin-top: 1.5rem;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .process-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .process-step:hover .process-image img {
-            transform: scale(1.05);
         }
 
         .process-title {
@@ -617,7 +621,7 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(min(350px, 100%), 1fr));
             gap: 1.5rem;
         }
 
@@ -896,7 +900,7 @@
         .form-control:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.2);
+            box-shadow: 0 0 0 3px rgba(224, 93, 0, 0.2);
         }
 
         textarea.form-control {
@@ -926,6 +930,7 @@
 
         .footer-logo img {
             height: 40px;
+            width: auto;
         }
 
         .footer-logo-text {
@@ -1081,6 +1086,10 @@
             .hero-title {
                 font-size: 3rem;
             }
+
+            .process-step {
+                min-height: 240px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1147,6 +1156,10 @@
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
+
+            .process-step {
+                min-height: auto;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1166,16 +1179,40 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* ===== ACCESIBILIDAD ===== */
+        a:focus, button:focus {
+            outline: 3px solid var(--primary);
+            outline-offset: 3px;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary);
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
     </style>
 </head>
 <body>
+    <!-- Skip link para accesibilidad -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
             <nav class="navbar">
                 <a href="#" class="logo">
-                    <img src="assets/img/logo.png" alt="EPQ Construacción">
-                    <span class="logo-text">EPQ <span>Construacción</span></span>
+                    <img src="assets/img/logo.png" alt="EPQ Construcción" width="50" height="50">
+                    <span class="logo-text">EPQ <span>Construcción</span></span>
                 </a>
                 
                 <ul class="nav-links">
@@ -1186,7 +1223,7 @@
                     <li><a href="#contacto" class="nav-link">Contacto</a></li>
                 </ul>
                 
-                <button class="mobile-menu-btn">
+                <button class="mobile-menu-btn" aria-label="Menú móvil">
                     <i class="fas fa-bars"></i>
                 </button>
             </nav>
@@ -1230,7 +1267,7 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2 class="about-title">EPQ <span>Construacción</span></h2>
+                    <h2 class="about-title">EPQ <span>Construcción</span></h2>
                     <p class="about-description">Con más de cuatro décadas de experiencia en el sector de la construcción, nos hemos consolidado como líderes en Huancayo, ofreciendo servicios de alta calidad y garantizando la satisfacción de nuestros clientes.</p>
                     
                     <div class="about-features">
@@ -1269,7 +1306,7 @@
                 </div>
                 
                 <div class="about-image">
-                    <img src="assets/img/about.jpg" alt="Equipo de EPQ Construacción">
+                    <img src="assets/img/about.jpg" alt="Equipo de EPQ Construcción" width="600" height="400">
                     <div class="years-experience">
                         <div class="years-number">40</div>
                         <div class="years-text">Años</div>
@@ -1288,7 +1325,7 @@
                 <!-- Servicio 1 -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="assets/img/service-1.jpg" alt="Construcción Tradicional">
+                        <img src="assets/img/service-1.jpg" alt="Construcción Tradicional" width="400" height="200">
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Construcción Tradicional</h3>
@@ -1322,7 +1359,7 @@
                 <!-- Servicio 2 -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="assets/img/service-2.jpg" alt="Drywall">
+                        <img src="assets/img/service-2.jpg" alt="Drywall" width="400" height="200">
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Drywall</h3>
@@ -1356,7 +1393,7 @@
                 <!-- Servicio 3 -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="assets/img/service-3.jpg" alt="Marmolería">
+                        <img src="assets/img/service-3.jpg" alt="Marmolería" width="400" height="200">
                     </div>
                     <div class="service-content">
                         <h3 class="service-title">Marmolería</h3>
@@ -1403,57 +1440,33 @@
                     </div>
                     <h3 class="process-title">Cotización</h3>
                     <p class="process-description">Te proporcionamos un presupuesto detallado y transparente sin compromiso.</p>
-                    <div class="process-image">
-                        <img src="assets/img/process-1.jpg" alt="Proceso de cotización">
-                    </div>
                 </div>
                 
-                <!-- Paso 2 - Diseño -->
-                <div class="process-step">
-                    <div class="process-icon">
-                        <i class="fas fa-drafting-compass"></i>
-                    </div>
-                    <h3 class="process-title">Diseño</h3>
-                    <p class="process-description">Creamos planos personalizados que se ajustan a tus necesidades y presupuesto.</p>
-                    <div class="process-image">
-                        <img src="assets/img/process-2.jpg" alt="Proceso de diseño">
-                    </div>
-                </div>
-                
-                <!-- Paso 3 - Contrato -->
+                <!-- Paso 2 - Contrato -->
                 <div class="process-step">
                     <div class="process-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
                     <h3 class="process-title">Contrato</h3>
                     <p class="process-description">Establecemos acuerdos claros con plazos, costos y garantías definidas.</p>
-                    <div class="process-image">
-                        <img src="assets/img/process-3.jpg" alt="Proceso de contrato">
-                    </div>
                 </div>
                 
-                <!-- Paso 4 - Construcción -->
+                <!-- Paso 3 - Construcción -->
                 <div class="process-step">
                     <div class="process-icon">
                         <i class="fas fa-hard-hat"></i>
                     </div>
                     <h3 class="process-title">Construcción</h3>
                     <p class="process-description">Nuestro equipo ejecuta el proyecto con los más altos estándares de calidad.</p>
-                    <div class="process-image">
-                        <img src="assets/img/process-4.jpg" alt="Proceso de construcción">
-                    </div>
                 </div>
                 
-                <!-- Paso 5 - Entrega -->
+                <!-- Paso 4 - Entrega -->
                 <div class="process-step">
                     <div class="process-icon">
                         <i class="fas fa-key"></i>
                     </div>
                     <h3 class="process-title">Entrega</h3>
                     <p class="process-description">Te entregamos tu proyecto terminado, listo para ser disfrutado.</p>
-                    <div class="process-image">
-                        <img src="assets/img/process-5.jpg" alt="Proceso de entrega">
-                    </div>
                 </div>
             </div>
         </div>
@@ -1476,7 +1489,7 @@
                 <!-- Proyecto 1 -->
                 <div class="project-card" data-category="casas">
                     <div class="project-image">
-                        <img src="assets/img/project-1.jpg" alt="Casa Moderna">
+                        <img src="assets/img/project-1.jpg" alt="Casa Moderna" width="400" height="250">
                     </div>
                     <div class="project-overlay">
                         <h3 class="project-title">Casa Moderna</h3>
@@ -1487,7 +1500,7 @@
                 <!-- Proyecto 2 -->
                 <div class="project-card" data-category="drywall">
                     <div class="project-image">
-                        <img src="assets/img/project-2.jpg" alt="Oficinas en Drywall">
+                        <img src="assets/img/project-2.jpg" alt="Oficinas en Drywall" width="400" height="250">
                     </div>
                     <div class="project-overlay">
                         <h3 class="project-title">Oficinas Corporativas</h3>
@@ -1498,7 +1511,7 @@
                 <!-- Proyecto 3 -->
                 <div class="project-card" data-category="marmoleria">
                     <div class="project-image">
-                        <img src="assets/img/project-3.jpg" alt="Cocina en Mármol">
+                        <img src="assets/img/project-3.jpg" alt="Cocina en Mármol" width="400" height="250">
                     </div>
                     <div class="project-overlay">
                         <h3 class="project-title">Cocina de Lujo</h3>
@@ -1509,7 +1522,7 @@
                 <!-- Proyecto 4 -->
                 <div class="project-card" data-category="remodelaciones">
                     <div class="project-image">
-                        <img src="assets/img/project-4.jpg" alt="Remodelación de Casa">
+                        <img src="assets/img/project-4.jpg" alt="Remodelación de Casa" width="400" height="250">
                     </div>
                     <div class="project-overlay">
                         <h3 class="project-title">Remodelación Integral</h3>
@@ -1520,7 +1533,7 @@
                 <!-- Proyecto 5 -->
                 <div class="project-card" data-category="casas">
                     <div class="project-image">
-                        <img src="assets/img/project-5.jpg" alt="Casa Familiar">
+                        <img src="assets/img/project-5.jpg" alt="Casa Familiar" width="400" height="250">
                     </div>
                     <div class="project-overlay">
                         <h3 class="project-title">Casa Familiar</h3>
@@ -1531,7 +1544,7 @@
                 <!-- Proyecto 6 -->
                 <div class="project-card" data-category="drywall">
                     <div class="project-image">
-                        <img src="assets/img/project-6.jpg" alt="Cielo Raso en Drywall">
+                        <img src="assets/img/project-6.jpg" alt="Cielo Raso en Drywall" width="400" height="250">
                     </div>
                     <div class="project-overlay">
                         <h3 class="project-title">Cielo Raso Moderno</h3>
@@ -1551,9 +1564,9 @@
                 <!-- Testimonio 1 -->
                 <div class="testimonial-slide active">
                     <div class="testimonial-avatar">
-                        <img src="assets/img/testimonial-1.jpg" alt="Víctor Advíncula">
+                        <img src="assets/img/testimonial-1.jpg" alt="Víctor Advíncula" width="100" height="100">
                     </div>
-                    <p class="testimonial-text">EPQ Construacción construyó todos nuestros locales de Pollería La Leña. Su trabajo es impecable y cumplen siempre con los plazos. Los recomiendo totalmente para proyectos comerciales.</p>
+                    <p class="testimonial-text">EPQ Construcción construyó todos nuestros locales de Pollería La Leña. Su trabajo es impecable y cumplen siempre con los plazos. Los recomiendo totalmente para proyectos comerciales.</p>
                     <h4 class="testimonial-author">Víctor Advíncula</h4>
                     <p class="testimonial-role">Dueño de Pollerías La Leña</p>
                 </div>
@@ -1561,9 +1574,9 @@
                 <!-- Testimonio 2 -->
                 <div class="testimonial-slide">
                     <div class="testimonial-avatar">
-                        <img src="assets/img/testimonial-2.jpg" alt="Amador Vilcatoma">
+                        <img src="assets/img/testimonial-2.jpg" alt="Amador Vilcatoma" width="100" height="100">
                     </div>
-                    <p class="testimonial-text">El maestro de EPQ Construacción ha construido mis tres casas familiares. Su atención al detalle y conocimiento técnico son incomparables. Una empresa seria y confiable.</p>
+                    <p class="testimonial-text">El maestro de EPQ Construcción ha construido mis tres casas familiares. Su atención al detalle y conocimiento técnico son incomparables. Una empresa seria y confiable.</p>
                     <h4 class="testimonial-author">Amador Vilcatoma</h4>
                     <p class="testimonial-role">Rector de la UNC</p>
                 </div>
@@ -1571,9 +1584,9 @@
                 <!-- Testimonio 3 -->
                 <div class="testimonial-slide">
                     <div class="testimonial-avatar">
-                        <img src="assets/img/testimonial-3.jpg" alt="Eduardo Quispe">
+                        <img src="assets/img/testimonial-3.jpg" alt="Eduardo Quispe" width="100" height="100">
                     </div>
-                    <p class="testimonial-text">Los locales de nuestras Pollerías Mesoncito fueron construidos por EPQ Construacción. Su trabajo en drywall y acabados es de primera calidad. Excelente relación precio-calidad.</p>
+                    <p class="testimonial-text">Los locales de nuestras Pollerías Mesoncito fueron construidos por EPQ Construcción. Su trabajo en drywall y acabados es de primera calidad. Excelente relación precio-calidad.</p>
                     <h4 class="testimonial-author">Eduardo Quispe</h4>
                     <p class="testimonial-role">Dueño de Pollerías Mesoncito</p>
                 </div>
@@ -1635,7 +1648,7 @@
                         </div>
                         <div class="contact-text">
                             <h3>Email</h3>
-                            <a href="mailto:contacto@epqconstruaccion.com">contacto@epqconstruaccion.com</a>
+                            <a href="mailto:contacto@epqconstruccion.com">contacto@epqconstruccion.com</a>
                         </div>
                     </div>
                     
@@ -1652,7 +1665,7 @@
                 </div>
                 
                 <div class="contact-form">
-                    <form id="contactForm" action="gracias.html" method="GET">
+                    <form id="contactForm" action="gracias.html" method="POST">
                         <div class="form-group">
                             <label for="name" class="form-label">Nombre Completo</label>
                             <input type="text" id="name" name="name" class="form-control" required>
@@ -1685,6 +1698,11 @@
                             <textarea id="message" name="message" class="form-control" rows="5"></textarea>
                         </div>
                         
+                        <!-- Campo honeypot para protección contra bots -->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                            <input type="text" name="_honey" tabindex="-1">
+                        </div>
+                        
                         <button type="submit" class="btn btn-primary btn-block">
                             <i class="fas fa-paper-plane"></i> Enviar Mensaje
                         </button>
@@ -1700,26 +1718,26 @@
             <div class="footer-container">
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="assets/img/logo-white.png" alt="EPQ Construacción">
-                        <span class="footer-logo-text">EPQ <span>Construacción</span></span>
+                        <img src="assets/img/logo-white.png" alt="EPQ Construcción" width="40" height="40">
+                        <span class="footer-logo-text">EPQ <span>Construcción</span></span>
                     </div>
                     <p class="footer-about">40 años construyendo sueños en Huancayo. Calidad, compromiso y profesionalismo en cada proyecto.</p>
                     <div class="footer-social">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://wa.me/51924919493" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/51924919493" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-col">
                     <h3 class="footer-title">Servicios</h3>
                     <ul class="footer-links">
-                        <li><a href="#" class="footer-link">Construcción Tradicional</a></li>
-                        <li><a href="#" class="footer-link">Drywall</a></li>
-                        <li><a href="#" class="footer-link">Marmolería</a></li>
-                        <li><a href="#" class="footer-link">Remodelaciones</a></li>
-                        <li><a href="#" class="footer-link">Instalaciones Eléctricas</a></li>
+                        <li><a href="#servicios" class="footer-link">Construcción Tradicional</a></li>
+                        <li><a href="#servicios" class="footer-link">Drywall</a></li>
+                        <li><a href="#servicios" class="footer-link">Marmolería</a></li>
+                        <li><a href="#servicios" class="footer-link">Remodelaciones</a></li>
+                        <li><a href="#servicios" class="footer-link">Instalaciones Eléctricas</a></li>
                     </ul>
                 </div>
                 
@@ -1752,19 +1770,19 @@
                         <div class="footer-contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <a href="mailto:contacto@epqconstruaccion.com">contacto@epqconstruaccion.com</a>
+                        <a href="mailto:contacto@epqconstruccion.com">contacto@epqconstruccion.com</a>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 EPQ Construacción. Todos los derechos reservados.</p>
+                <p>&copy; 2025 EPQ Construcción. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/51924919493" class="whatsapp-float">
+    <a href="https://wa.me/51924919493" class="whatsapp-float" aria-label="Contactar por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -1780,6 +1798,14 @@
                 '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
         
+        // Cerrar menú al hacer clic fuera
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
         // Close mobile menu when clicking on a link
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
@@ -1821,7 +1847,8 @@
         let currentTestimonial = 0;
         const testimonials = document.querySelectorAll('.testimonial-slide');
         const dots = document.querySelectorAll('.testimonial-dot');
-        
+        let testimonialInterval;
+
         function showTestimonial(index) {
             testimonials.forEach(testimonial => {
                 testimonial.classList.remove('active');
@@ -1835,24 +1862,29 @@
             currentTestimonial = index;
         }
         
-        // Add click event to dots
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                showTestimonial(index);
-            });
-        });
+        function startTestimonialRotation() {
+            testimonialInterval = setInterval(nextTestimonial, 5000);
+        }
         
-        // Auto-rotate testimonials
         function nextTestimonial() {
             currentTestimonial = (currentTestimonial + 1) % testimonials.length;
             showTestimonial(currentTestimonial);
         }
         
+        // Add click event to dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                clearInterval(testimonialInterval);
+                showTestimonial(index);
+                setTimeout(startTestimonialRotation, 10000); // Reanudar después de 10s
+            });
+        });
+        
         // Mostrar primer testimonio
         showTestimonial(0);
         
         // Cambiar testimonio cada 5 segundos
-        setInterval(nextTestimonial, 5000);
+        startTestimonialRotation();
         
         // Form validation
         const contactForm = document.getElementById('contactForm');
@@ -1866,13 +1898,26 @@
             const service = this.service.value;
             
             if (name && email && phone && service) {
-                // Here you would typically send the form data to a server
-                // For now, we'll just redirect to the thank you page
-                window.location.href = 'gracias.html';
+                // Aquí normalmente enviarías el formulario a un servidor
+                // Para este ejemplo, redirigimos a la página de gracias
+                this.submit();
             } else {
                 alert('Por favor complete todos los campos requeridos.');
             }
         });
+
+        // Lazy loading para imágenes
+        if ('loading' in HTMLImageElement.prototype) {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            images.forEach(img => {
+                img.src = img.dataset.src;
+            });
+        } else {
+            // Cargar polyfill para lazy loading si el navegador no lo soporta
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.0.1/dist/loading-attribute-polyfill.min.js';
+            document.body.appendChild(script);
+        }
     </script>
 </body>
 </html>
