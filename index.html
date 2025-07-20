@@ -261,11 +261,11 @@
             padding: 1.5rem 0;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
+        .logo, .footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
         .logo img {
             height: auto;
             width: auto;
@@ -273,20 +273,16 @@
             transition: var(--transition);
         }
 
-        @media (max-width: 768px) {
-            .logo img {
-                max-height: 40px;
-            }
-        }
-
-        .logo-text {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 1.5rem;
-            margin-left: 0.75rem;
-            color: var(--secondary);
-        }
-
+        @media (max-width: 767px) {
+  .logo img, .footer-logo img {
+    max-width: 100px; /* Tamaño máximo en móvil */
+    max-height: 100px;
+  }
+  
+  .logo-text, .footer-logo-text {
+    font-size: 1.1rem; /* Ajuste para móvil */
+  }
+}
         .logo-text span {
             color: var(--primary);
         }
