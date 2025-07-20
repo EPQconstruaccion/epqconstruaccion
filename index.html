@@ -997,11 +997,13 @@
         }
 
         .footer-logo img {
-            height: auto;
-            max-height: 40px;
             width: auto;
-            transition: var(--transition);
-        }
+  height: auto;
+  max-width: 150px; /* Tamaño máximo en desktop */
+  max-height: 150px;
+  object-fit: contain;
+  transition: var(--transition);
+}
 
         .footer-logo:hover img {
             transform: scale(1.05);
