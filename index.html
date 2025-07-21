@@ -247,6 +247,7 @@
             background-color: rgba(255, 255, 255, 0.95);
             box-shadow: var(--shadow-sm);
             transition: var(--transition);
+            padding: 0.5rem 0;
         }
 
         .header.scrolled {
@@ -258,7 +259,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            padding: 0.5rem 1rem;
         }
 
         .logo {
@@ -267,20 +268,24 @@
             gap: 10px;
         }
 
-        /* LOGO HEADER */
+        /* LOGO HEADER - MEJORADO */
         .header-logo {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             object-fit: contain;
             display: block;
             transition: var(--transition);
+            border-radius: 5px;
         }
 
+        /* TEXTO LOGO - MEJORADO */
         .logo-text {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 1.25rem;
+            font-weight: 800;
+            font-size: 1.5rem;
             color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .logo-text span {
@@ -322,14 +327,14 @@
             display: none;
             background: none;
             border: none;
-            font-size: 1.5rem;
-            color: var(--dark);
+            font-size: 1.8rem;
+            color: var(--primary);
             cursor: pointer;
             padding: 0.5rem;
             z-index: 1001;
         }
 
-        /* Overlay para el menú móvil */
+        /* Overlay para el menú móvil - MEJORADO */
         .nav-overlay {
             position: fixed;
             top: 0;
@@ -986,7 +991,7 @@
             margin-bottom: 3rem;
         }
 
-        /* LOGO FOOTER */
+        /* LOGO FOOTER - MEJORADO */
         .footer-logo-container {
             display: flex;
             align-items: center;
@@ -995,10 +1000,11 @@
         }
 
         .footer-logo {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             object-fit: contain;
             flex-shrink: 0;
+            border-radius: 5px;
         }
 
         .footer-logo-text-container {
@@ -1009,14 +1015,17 @@
 
         .footer-logo-text {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 1.1rem;
+            font-weight: 800;
+            font-size: 1.25rem;
             color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .footer-logo-text-accent {
             color: var(--primary);
-            font-size: 1.1rem;
+            font-size: 1.25rem;
+            text-transform: uppercase;
         }
 
         .footer-about {
@@ -1207,17 +1216,17 @@
             }
             
             .logo-text {
-                font-size: 1.1rem;
+                font-size: 1.3rem; /* Ajuste para móviles */
             }
 
-            /* Menú móvil mejorado */
+            /* Menú móvil mejorado - FONDO OSCURO TRANSPARENTE */
             .nav-links {
                 position: fixed;
                 top: 0;
                 right: -100%;
                 width: 80%;
                 height: 100vh;
-                background-color: rgba(255, 255, 255, 0.95);
+                background-color: rgba(30, 43, 56, 0.95);
                 backdrop-filter: blur(10px);
                 flex-direction: column;
                 align-items: flex-start;
@@ -1236,6 +1245,11 @@
             .nav-link {
                 font-size: 1.1rem;
                 padding: 0.5rem 0;
+                color: var(--white) !important;
+            }
+
+            .nav-link::after {
+                background-color: var(--primary);
             }
 
             .mobile-menu-btn {
