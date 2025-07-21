@@ -245,7 +245,7 @@
             width: 100%;
             z-index: 1000;
             background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: var(--shadow-sm);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             transition: var(--transition);
             padding: 0.5rem 0;
         }
@@ -1208,15 +1208,20 @@
 
             /* Header optimizado para móvil */
             .header {
-                padding: 0.5rem 0;
+                padding: 0.3rem 0;
             }
             
             .navbar {
-                padding: 0.5rem 1rem;
+                padding: 0.5rem;
+            }
+            
+            .header-logo {
+                width: 50px;
+                height: 50px;
             }
             
             .logo-text {
-                font-size: 1.3rem; /* Ajuste para móviles */
+                font-size: 1.1rem;
             }
 
             /* Menú móvil mejorado - FONDO OSCURO TRANSPARENTE */
@@ -1259,11 +1264,12 @@
             /* Hero section optimizado */
             .hero {
                 min-height: 600px;
-                padding-top: 70px;
+                padding-top: 90px;
             }
             
             .hero-title {
                 font-size: 2rem;
+                margin-top: 0.5rem;
             }
             
             .hero-subtitle {
