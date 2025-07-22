@@ -1877,51 +1877,52 @@
                 </div>
                 
                 <div class="contact-form">
-                    <form id="contactForm" name="contact" method="POST" netlify data-netlify="true" action="/gracias.html">
-    <!-- Campo oculto de Netlify -->
-    <input type="hidden" name="form-name" value="contact">
-    
-    <div class="form-group">
-        <label for="name" class="form-label">Nombre Completo</label>
-        <input type="text" id="name" name="name" class="form-control" required>
-    </div>
-    
-    <div class="form-group">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" id="email" name="email" class="form-control" required>
-    </div>
-    
-    <div class="form-group">
-        <label for="phone" class="form-label">Teléfono</label>
-        <input type="tel" id="phone" name="phone" class="form-control" required>
-    </div>
-    
-    <div class="form-group">
-        <label for="service" class="form-label">Servicio de Interés</label>
-        <select id="service" name="service" class="form-control" required>
-            <option value="" disabled selected>Selecciona un servicio</option>
-            <option value="construccion">Construcción Tradicional</option>
-            <option value="drywall">Drywall</option>
-            <option value="marmoleria">Marmolería</option>
-            <option value="albanileria">Albañilería en General</option>
-            <option value="remodelacion">Remodelación</option>
-            <option value="otros">Otros Servicios</option>
-        </select>
-    </div>
-    
-    <div class="form-group">
-        <label for="message" class="form-label">Mensaje</label>
-        <textarea id="message" name="message" class="form-control" rows="5"></textarea>
-    </div>
-    
-    <!-- Campo honeypot para protección contra bots -->
-    <div style="position: absolute; left: -5000px;" aria-hidden="true">
-        <input type="text" name="_honey" tabindex="-1">
-    </div>
-    
-    <button type="submit" class="btn btn-primary btn-block">
-        <i class="fas fa-paper-plane"></i> Enviar Mensaje
-    </button>
+                    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/gracias.html">
+  <!-- Campo oculto REQUERIDO por Netlify -->
+  <input type="hidden" name="form-name" value="contact">
+  
+  <!-- Campo honeypot para spam -->
+  <div class="form-group" style="display: none;">
+    <label>No llenes este campo si eres humano: <input name="bot-field"></label>
+  </div>
+
+  <!-- Campos de tu formulario (conservando tus estilos) -->
+  <div class="form-group">
+    <label for="name" class="form-label">Nombre Completo</label>
+    <input type="text" id="name" name="name" class="form-control" required>
+  </div>
+  
+  <div class="form-group">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" id="email" name="email" class="form-control" required>
+  </div>
+  
+  <div class="form-group">
+    <label for="phone" class="form-label">Teléfono</label>
+    <input type="tel" id="phone" name="phone" class="form-control" required>
+  </div>
+  
+  <div class="form-group">
+    <label for="service" class="form-label">Servicio de Interés</label>
+    <select id="service" name="service" class="form-control" required>
+      <option value="" disabled selected>Selecciona un servicio</option>
+      <option value="construccion">Construcción Tradicional</option>
+      <option value="drywall">Drywall</option>
+      <option value="marmoleria">Marmolería</option>
+      <option value="albanileria">Albañilería en General</option>
+      <option value="remodelacion">Remodelación</option>
+      <option value="otros">Otros Servicios</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="message" class="form-label">Mensaje</label>
+    <textarea id="message" name="message" class="form-control" rows="5"></textarea>
+  </div>
+  
+  <button type="submit" class="btn btn-primary btn-block">
+    <i class="fas fa-paper-plane"></i> Enviar Mensaje
+  </button>
 </form>
                 </div>
             </div>
