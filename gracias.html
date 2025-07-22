@@ -4,20 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Gracias por contactarnos! | EPQ Construacción</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Gracias por enviar tu consulta. Nos pondremos en contacto contigo en menos de 1 hora.">
+    
+    <!-- Preconexión para fuentes externas -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="¡Gracias por contactarnos! | EPQ Construacción">
+    <meta property="og:description" content="Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto.">
+    <meta property="og:image" content="https://epqconstruaccion.com/assets/img/og-image.jpg">
+    <meta property="og:url" content="https://epqconstruaccion.com/gracias.html">
+    <meta property="og:type" content="website">
+    
     <style>
-        /* Reset y estilos base */
+        /* ===== VARIABLES Y RESET ===== */
+        :root {
+            --primary: #E05D00;
+            --primary-dark: #C25100;
+            --secondary: #1E2B38;
+            --light: #F8F9FA;
+            --dark: #212529;
+            --gray: #6C757D;
+            --white: #FFFFFF;
+            --whatsapp: #25D366;
+            --success: #28A745;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+            color: var(--dark);
+            background-color: var(--light);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -25,88 +62,116 @@
             padding: 2rem;
             text-align: center;
         }
-        
+
         .thank-you-container {
             max-width: 600px;
-            background-color: #fff;
-            border-radius: 10px;
+            width: 100%;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
             padding: 3rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .thank-you-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--success));
+        }
+
         .check-icon {
             font-size: 5rem;
-            color: #28a745;
+            color: var(--success);
             margin-bottom: 1.5rem;
             animation: bounce 1s;
         }
-        
+
         h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #2c3e50;
+            color: var(--secondary);
         }
-        
+
         p {
             font-size: 1.1rem;
-            margin-bottom: 2rem;
-            color: #6c757d;
+            margin-bottom: 1.5rem;
+            color: var(--gray);
         }
-        
+
         .highlight {
-            color: #FF6B00;
+            color: var(--primary);
             font-weight: 600;
         }
-        
+
+        .service-highlight {
+            display: inline-block;
+            background-color: rgba(224, 93, 0, 0.1);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-weight: 500;
+            margin: 0.5rem 0;
+        }
+
         .buttons {
             display: flex;
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
+            margin-top: 2rem;
         }
-        
+
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
             padding: 0.75rem 1.75rem;
-            border-radius: 8px;
+            border-radius: var(--border-radius);
             font-weight: 600;
             text-align: center;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             border: none;
             font-size: 1rem;
+            text-decoration: none;
         }
-        
+
         .btn-whatsapp {
-            background-color: #25D366;
-            color: #fff;
+            background-color: var(--whatsapp);
+            color: var(--white);
         }
-        
+
         .btn-whatsapp:hover {
             background-color: #128C7E;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-md);
         }
-        
+
         .btn-primary {
-            background-color: #FF6B00;
-            color: #fff;
+            background-color: var(--primary);
+            color: var(--white);
         }
-        
+
         .btn-primary:hover {
-            background-color: #E05D00;
+            background-color: var(--primary-dark);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-md);
         }
-        
+
         .whatsapp-float {
             position: fixed;
             bottom: 2rem;
             right: 2rem;
             width: 60px;
             height: 60px;
-            background-color: #25D366;
-            color: #fff;
+            background-color: var(--whatsapp);
+            color: var(--white);
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -114,15 +179,16 @@
             font-size: 1.75rem;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             z-index: 999;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             animation: pulse 2s infinite;
         }
-        
+
         .whatsapp-float:hover {
             transform: scale(1.1);
             animation: none;
         }
-        
+
+        /* Animaciones */
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {
                 transform: translateY(0);
@@ -134,7 +200,7 @@
                 transform: translateY(-10px);
             }
         }
-        
+
         @keyframes pulse {
             0% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
@@ -146,10 +212,11 @@
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
         }
-        
+
+        /* Responsive */
         @media (max-width: 768px) {
             .thank-you-container {
-                padding: 2rem;
+                padding: 2rem 1.5rem;
             }
             
             h1 {
@@ -158,10 +225,34 @@
             
             .buttons {
                 flex-direction: column;
+                gap: 0.75rem;
             }
             
             .btn {
                 width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem;
+                align-items: flex-start;
+            }
+            
+            .thank-you-container {
+                padding: 1.5rem 1rem;
+            }
+            
+            .check-icon {
+                font-size: 4rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            p {
+                font-size: 1rem;
             }
         }
     </style>
@@ -172,22 +263,71 @@
             <i class="fas fa-check-circle"></i>
         </div>
         <h1>¡Gracias por contactarnos!</h1>
-        <p>Hemos recibido tu mensaje y nos pondremos en contacto contigo en menos de <span class="highlight">1 hora</span>.</p>
+        <p id="confirmation-message">Hemos recibido tu mensaje y nos pondremos en contacto contigo en menos de <span class="highlight">1 hora laborable</span>.</p>
+        <div id="service-display" style="display: none;">
+            <p>Servicio solicitado:</p>
+            <div class="service-highlight" id="service-name"></div>
+        </div>
         <p>Mientras tanto, puedes comunicarte directamente con nosotros por WhatsApp para una respuesta más inmediata.</p>
         
         <div class="buttons">
-            <a href="https://wa.me/51924919493" class="btn btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> Chatear por WhatsApp
+            <a href="https://wa.me/51924919493?text=Hola%20EPQ%20Construacción,%20acabo%20de%20enviar%20el%20formulario%20y%20quiero%20más%20información" 
+               class="btn btn-whatsapp"
+               aria-label="Chatear por WhatsApp">
+                <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
-            <a href="index.html" class="btn btn-primary">
-                <i class="fas fa-home"></i> Volver al Inicio
+            <a href="index.html" class="btn btn-primary" aria-label="Volver al inicio">
+                <i class="fas fa-home"></i> Inicio
             </a>
         </div>
     </div>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/51924919493" class="whatsapp-float">
+    <a href="https://wa.me/51924919493?text=Hola%20EPQ%20Construacción,%20necesito%20más%20información" 
+       class="whatsapp-float"
+       aria-label="Contactar por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <script>
+        // Mostrar el servicio solicitado si viene en la URL
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const service = urlParams.get('service');
+            
+            if(service) {
+                const serviceDisplay = document.getElementById('service-display');
+                const serviceName = document.getElementById('service-name');
+                const confirmationMessage = document.getElementById('confirmation-message');
+                
+                serviceDisplay.style.display = 'block';
+                
+                // Traducir el valor del servicio a un nombre legible
+                const serviceNames = {
+                    'construccion': 'Construcción Tradicional',
+                    'drywall': 'Drywall',
+                    'marmoleria': 'Marmolería',
+                    'albanileria': 'Albañilería en General',
+                    'remodelacion': 'Remodelación',
+                    'otros': 'Otros Servicios'
+                };
+                
+                serviceName.textContent = serviceNames[service] || 'Servicio Personalizado';
+                confirmationMessage.textContent = `Hemos recibido tu solicitud y nos pondremos en contacto contigo en menos de `;
+                
+                const highlight = document.createElement('span');
+                highlight.className = 'highlight';
+                highlight.textContent = '1 hora laborable';
+                
+                confirmationMessage.appendChild(highlight);
+                confirmationMessage.appendChild(document.createTextNode('.'));
+            }
+            
+            // Opcional: Redirección después de 30 segundos
+            setTimeout(() => {
+                // window.location.href = 'index.html'; // Descomentar si se desea redirección automática
+            }, 30000);
+        });
+    </script>
 </body>
 </html>
